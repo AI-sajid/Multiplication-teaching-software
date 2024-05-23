@@ -1,12 +1,17 @@
 import tkinter as tk
 from tkinter import ttk
 from googletrans import Translator
+from tkinter import *
+from PIL import Image,ImageTk
+from random import randint
+
+
 
 def study():
     # Functionality for "study" button
     main_frame.place_forget()
     study_frame.place(relx=0,rely=0,relwidth=1,relheight=1)
-    buttons_study.configure(image=img_study[study])
+    
     
 def exit_study():
     study_frame.place_forget()#hides study frame
@@ -24,12 +29,13 @@ def quiz():
     #Functionality for "Quiz" button
     main_frame.place_forget()
     quiz_frame.place(relx=0,rely=0,relwidth=1,relheight=1)
-def exit_quiz():
+def exit_quiz(): #funtionality to exit from the Quiz frame
     quiz_frame.place_forget()
     main_frame.place(relx=0,rely=0,relwidth=1,relheight=1)
 def easy():
     quiz_frame.place_forget()
     easy_frame.place(relx=0,rely=0,relwidth=1,relheight=1)
+
 def exit_easy():
     easy_frame.place_forget()
     quiz_frame.place(relx=0,rely=0,relwidth=1,relheight=1)
@@ -150,6 +156,10 @@ def change_font():
 root = tk.Tk()
 root.title("Multiplication teaching software")
 root.geometry("800x600")
+root.iconbitmap('Multiplication_table.ico')
+
+image = ImageTk.PhotoImage(Image.open("Multiplication_table.ico"))
+label.pack()
 
 #create main frame
 main_frame = tk.Frame(root)
