@@ -152,10 +152,13 @@ def change_language(event):
     print("Selected language:", selected_language)
 
 def set_light_mode():
+    
     set_background_color("white")# changes bg colour to white
 
+
 def set_dark_mode():
-    set_background_color("black")# changes bg colour to black
+
+    set_background_color("#1A1A1B")# changes bg colour to light black
 
 def translate_gui(language):
     # Functionality to translate all GUI text elements
@@ -171,7 +174,7 @@ def translate_gui(language):
         label_study, button_exit_study, button_multiplication_table,
         label_multiplication_table, button_exit_multiplication_table,
         label_quiz, button_exit_quiz, button_easy, button_medium, button_hard,
-        label_easy, button_exit_easy,submit_button
+        label_easy, button_exit_easy,submit_button,zoom_in_button,zoom_out_button,button_exit_program
     ]
     
     for element in text_elements:
@@ -301,7 +304,10 @@ buttons_quiz = tk.Button(root, text="Quiz", command=quiz, width=17, height=3)
 buttons_quiz.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
 
 button_settings = tk.Button(root, text="Settings", command=settings)
-button_settings.place(relx=0.9, rely=0.9, anchor=tk.SE)
+button_settings.place(relx=0.9, rely=0.1, anchor=tk.NW)
+
+button_exit_program = tk.Button(root, text = "Exit door " , command=root.quit,width=17,height=3)
+button_exit_program.place(relx=0.5, rely=0.7, anchor=tk.CENTER)
 
 settings_frame = tk.Frame(root)
 
@@ -343,7 +349,7 @@ language_frame = tk.Frame(root)
 label_language_title = tk.Label(language_frame, text="Change Language", font=("Arial", 16))
 label_language_title.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
 
-languages = ["English", "Spanish", "French", "German", "Bengali", "Arabic", "Russian", "Hindi", "Indonesian", "Portuguese", "Chinese", "Japanese", "Korean"]
+languages = ["English", "Spanish", "French", "German", "Bengali", "Arabic", "Russian", "Hindi", "Indonesian", "Chinese", "Japanese", "Korean"]
 combobox_language = ttk.Combobox(language_frame, values=languages)
 combobox_language.place(relx=0.5, rely=0.3, anchor=tk.CENTER)
 combobox_language.bind("<<ComboboxSelected>>", change_language)
@@ -353,10 +359,10 @@ button_exit_language_settings.place(relx=0.1, rely=0.9, anchor=tk.SW)
 
 study_frame = tk.Frame(root)
 
-zoom_in_button = tk.Button(study_frame, text = "zoom in",command=zoom_in)
+zoom_in_button = tk.Button(study_frame, text = "zoom in(+)",command=zoom_in)
 zoom_in_button.place(relx=0.1,rely=0.1,anchor=tk.SE)
 
-zoom_out_button = tk.Button(study_frame, text="zoom out",command=zoom_out)
+zoom_out_button = tk.Button(study_frame, text="zoom out(-)",command=zoom_out)
 zoom_out_button.place(relx=0.9,rely=0.1,anchor=tk.SE)
 
 # Create and place widget for study interface
