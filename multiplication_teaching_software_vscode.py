@@ -174,7 +174,9 @@ def translate_gui(language):
         label_study, button_exit_study, button_multiplication_table,
         label_multiplication_table, button_exit_multiplication_table,
         label_quiz, button_exit_quiz, button_easy, button_medium, button_hard,
-        label_easy, button_exit_easy,submit_button,zoom_in_button,zoom_out_button,button_exit_program
+        label_easy, button_exit_easy,submit_button,zoom_in_button,zoom_out_button,button_exit_program,
+        submit_button,button_exit_easy,button_exit_hard,button_exit_medium,label_easy,label_medium,
+        label_hard
     ]
     
     for element in text_elements:
@@ -306,7 +308,7 @@ buttons_quiz.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
 button_settings = tk.Button(root, text="Settings", command=settings)
 button_settings.place(relx=0.9, rely=0.1, anchor=tk.NW)
 
-button_exit_program = tk.Button(root, text = "Exit door " , command=root.quit,width=17,height=3)
+button_exit_program = tk.Button(root, text = "Exit" , command=root.quit,width=17,height=3)
 button_exit_program.place(relx=0.5, rely=0.7, anchor=tk.CENTER)
 
 settings_frame = tk.Frame(root)
@@ -349,7 +351,7 @@ language_frame = tk.Frame(root)
 label_language_title = tk.Label(language_frame, text="Change Language", font=("Arial", 16))
 label_language_title.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
 
-languages = ["English", "Spanish", "French", "German", "Bengali", "Arabic", "Russian", "Hindi", "Indonesian", "Chinese", "Japanese", "Korean"]
+languages = ["English", "Spanish", "French", "German", "Bengali", "Arabic", "Russian", "Hindi", "Indonesian", "Japanese", "Korean"]
 combobox_language = ttk.Combobox(language_frame, values=languages)
 combobox_language.place(relx=0.5, rely=0.3, anchor=tk.CENTER)
 combobox_language.bind("<<ComboboxSelected>>", change_language)
@@ -360,7 +362,7 @@ button_exit_language_settings.place(relx=0.1, rely=0.9, anchor=tk.SW)
 study_frame = tk.Frame(root)
 
 zoom_in_button = tk.Button(study_frame, text = "zoom in(+)",command=zoom_in)
-zoom_in_button.place(relx=0.1,rely=0.1,anchor=tk.SE)
+zoom_in_button.place(relx=0.1,rely=0.1,anchor=tk.SW)
 
 zoom_out_button = tk.Button(study_frame, text="zoom out(-)",command=zoom_out)
 zoom_out_button.place(relx=0.9,rely=0.1,anchor=tk.SE)
@@ -440,5 +442,5 @@ submit_button.place(relx=0.5, rely=0.8, anchor=tk.CENTER)
 
 hard_result_label= tk.Label(hard_frame, text="", font=("Arial",16))
 
-#hi guys welcome back to my new minecraft letsplay today we will be fixing piston sounds
+
 root.mainloop()
